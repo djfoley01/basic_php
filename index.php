@@ -1,5 +1,5 @@
 <?php
 
-echo "This is PHP";
+echo "This is new PHP";
 
 ?>
