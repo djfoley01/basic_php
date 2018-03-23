@@ -1,0 +1,32 @@
+{
+    "apiVersion": "v1",
+    "kind": "Route",
+    "metadata": {
+        "annotations": {
+            "description": "Route for application.",
+            "openshift.io/host.generated": "true"
+        },
+        "creationTimestamp": null,
+        "labels": {
+            "app": "example-basicphp",
+            "application": "basicphp"
+        },
+        "name": "basicphp",
+        "selfLink": "/oapi/v1/namespaces/examples/routes/basicphp"
+    },
+    "spec": {
+        "host": "basicphp-examples.ocp.foley.core",
+        "port": {
+            "targetPort": "php"
+        },
+        "to": {
+            "kind": "Service",
+            "name": "basicphp",
+            "weight": 100
+        },
+        "wildcardPolicy": "None"
+    },
+    "status": {
+        "ingress": []
+    }
+}
