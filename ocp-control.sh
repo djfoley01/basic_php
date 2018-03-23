@@ -8,5 +8,6 @@ if [ "$update_obj" = "no" ]; then
 	/usr/local/bin/oc rollout latest dc/basicphp -n examples
 else
 	echo "Replacing Objects"
-	/usr/local/bin/oc replace -f route.json -n examples
+	/usr/local/bin/oc delete route basicphp -n examples
+	/usr/local/bin/oc create -f route.json -n examples
 fi
