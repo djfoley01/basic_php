@@ -8,6 +8,6 @@ echo "This is a PHP example.";
 </html>
 <?php
 
-echo "Test Build: 1";
+echo "Test Build: @VERSION@";
 
 ?>
