@@ -1,7 +1,7 @@
 # Variables to control OCP functions
 
-# update_obj determines whether or not modifications should be applied to the application objects in OpenShift.
-# This will replace the route and deployment configuration settings, and delete then re-create the service if set to yes
+# update_<obj> determines whether or not modifications should be applied to the application objects in OpenShift.
+# This will delete the route, deployment configuration, or the service, if set to yes and insert the object in the git repository.
 export update_route=no
 export update_service=no
 export update_dc=no
