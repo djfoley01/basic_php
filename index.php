@@ -1,6 +1,13 @@
 <?php
 
-echo -e "This is a PHP example.\n";
-echo -e "Test Build: 1\n";
+echo "This is a PHP example.";
+
+?>
+<html>
+<br>
+</html>
+<?php
+
+echo "Test Build: 1";
 
 ?>
