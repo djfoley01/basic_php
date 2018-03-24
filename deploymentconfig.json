@@ -43,7 +43,7 @@
                                 "value": "basicphp"
                             }
                         ],
-                        "image": "nexus.foley.core:5000/examples/basicphp:1.0",
+                        "image": "factory:8081/docker-local/basicphp2:@VERSION@",
                         "imagePullPolicy": "Always",
                         "name": "basicphp",
                         "ports": [
