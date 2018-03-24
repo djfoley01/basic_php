@@ -6,22 +6,23 @@ export update_route=no
 export update_service=no
 export update_dc=yes
 export project="examples"
+export appname="basicphp"
 
 if [ "$update_route" = "yes" ]; then
 	echo "Replacing Route"
-	/usr/local/bin/oc delete route basicphp -n $project
+	/usr/local/bin/oc delete route $appname -n $project
 	/usr/local/bin/oc create -f route.json -n $project
 fi
 if [ "$update_service" = "yes" ]; then
         echo "Replacing Service"
-        /usr/local/bin/oc delete service basicphp -n $project
+        /usr/local/bin/oc delete service $appname -n $project
         /usr/local/bin/oc create -f service.json -n $project
 fi
 if [ "$update_dc" = "yes" ]; then
         echo "Replacing DeploymentConfig"
-        /usr/local/bin/oc delete dc/basicphp -n $project
+        /usr/local/bin/oc delete dc/$appname -n $project
         /usr/local/bin/oc create -f deploymentconfig.json -n $project
 else
 	echo "Deploying Application"
-	/usr/local/bin/oc rollout latest dc/basicphp -n $project
+	/usr/local/bin/oc rollout latest dc/$appname -n $project
 fi
