@@ -1,6 +1,6 @@
 <?php
 
-echo "This is a PHP example.\n";
-echo "Test Build: 1\n";
+echo -e "This is a PHP example.\n";
+echo -e "Test Build: 1\n";
 
 ?>
