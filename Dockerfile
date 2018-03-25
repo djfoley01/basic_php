@@ -1,8 +1,14 @@
-FROM php:7.0-apache
-RUN apt-get update -y && apt-get upgrade -y
-COPY index.php /var/www/html/index.php
-RUN sed -i 's/80/8080/g' /etc/apache2/ports.conf
-RUN sed -i 's/80/8080/g' /etc/apache2/sites-available/*
-RUN chmod 777 /var/run/* -R && chmod 777 /var/log/* -R
+FROM rhel7
+
+RUN yum -y --setopt=tsflags=nodocs update && \
+    yum -y --setopt=tsflags=nodocs install httpd php && \
+    yum clean all
 
 EXPOSE 8080
+
+# Simple startup script to avoid some issues observed with container restart
+COPY run-httpd.sh /run-httpd.sh
+RUN chmod -v +x /run-httpd.sh
+RUN sed -i 's/Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf && sed -i 's/index.html/index.html index.php/g' /etc/httpd/conf/httpd.conf
+COPY index.php /var/www/html/index.php
+CMD ["/run-httpd.sh"]
