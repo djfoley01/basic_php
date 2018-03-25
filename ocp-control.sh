@@ -4,7 +4,7 @@
 # This will delete the route, deployment configuration, or the service, if set to yes and insert the object in the git repository.
 export update_route=no
 export update_service=no
-export update_dc=yes
+export update_dc=no
 export project="examples"
 export appname="basicphp"
 
