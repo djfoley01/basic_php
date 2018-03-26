@@ -43,7 +43,7 @@
                                 "value": "basicphp"
                             }
                         ],
-                        "image": "factory:8081/docker-local/basicphp2:@VERSION@",
+                        "image": "factory:8081/docker-local/basicphp2:latest",
                         "imagePullPolicy": "Always",
                         "name": "basicphp",
                         "ports": [
