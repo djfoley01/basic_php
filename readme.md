@@ -28,7 +28,12 @@ docker rmi ${IMAGE}:latest
 
 #### Step 2
 
-You do not have to use the ocp-control.sh script, you can simply run /usr/local/bin/oc rollout --latest basicphp -n <project>.
+You do not have to use the ocp-control.sh script, you can simply run:
+
+```
+ /usr/local/bin/oc rollout --latest basicphp -n <project>
+```
+
 The token should be a for a service account that has limited access to modify / create / delete objects.
 
 ```
