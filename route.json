@@ -15,7 +15,7 @@
         "selfLink": "/oapi/v1/namespaces/examples/routes/basicphp"
     },
     "spec": {
-        "host": "basicphp-examples-tmp.ocp.foley.core",
+        "host": "basicphp2-examples-tmp.ocp.foley.core",
         "port": {
             "targetPort": "php"
         },
