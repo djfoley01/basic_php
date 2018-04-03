@@ -2,7 +2,7 @@
 
 # update_<obj> determines whether or not modifications should be applied to the application objects in OpenShift.
 # This will delete the route, deployment configuration, or the service, if set to yes and insert the object in the git repository.
-export update_route=no
+export update_route=yes
 export update_service=no
 export update_dc=yes
 export project="examples"
